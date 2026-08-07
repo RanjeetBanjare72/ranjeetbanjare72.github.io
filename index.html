@@ -1,1 +1,382 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RANJEET BANJARE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: #f8f5f0; color: #1e2b2c; }
+        a { text-decoration: none; }
 
+        .navbar {
+            position: sticky; top: 0; z-index: 999;
+            background: linear-gradient(135deg, #0f3b2a, #1f5e40);
+            padding: 12px 25px;
+            display: flex; flex-wrap: wrap;
+            align-items: center; justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
+        .logo { color: #f5e6c8; font-size: 1.3rem; font-weight: 700; }
+        .logo i { color: #e8b86d; margin-right: 8px; }
+        .nav-links {
+            display: flex; flex-wrap: wrap;
+            gap: 8px 16px;
+        }
+        .nav-links a {
+            color: #f0f0e8; font-weight: 500; font-size: 0.95rem;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { border-bottom-color: #e8b86d; color: #ffe9b6; }
+        .menu-toggle {
+            display: none; color: #f5e6c8; font-size: 1.8rem; cursor: pointer;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px 25px; }
+
+        .hero {
+            background: linear-gradient(145deg, #e5efe8, #d4e0d9);
+            padding: 50px 30px; border-radius: 30px; text-align: center;
+            margin: 20px 0 35px;
+        }
+        .hero h2 { font-size: 2.4rem; color: #0f3b2a; }
+        .hero p { font-size: 1.1rem; margin: 10px 0 18px; color: #2b4a3b; }
+
+        .btn {
+            display: inline-block; background: #b8863a; color: #fff;
+            padding: 13px 40px; border-radius: 60px; font-weight: 700;
+            font-size: 1.05rem; transition: 0.3s; border: none; cursor: pointer;
+        }
+        .btn:hover { background: #9e6f2c; transform: translateY(-3px); }
+        .btn-whatsapp { background: #25D366; }
+        .btn-whatsapp:hover { background: #1da85a; }
+
+        .section-title {
+            text-align: center; font-size: 2rem; font-weight: 700;
+            color: #0f3b2a; margin: 45px 0 20px;
+        }
+        .section-title::after {
+            content: ""; display: block; width: 60px; height: 4px;
+            background: #b8863a; margin: 10px auto 0; border-radius: 4px;
+        }
+
+        .disease-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; margin: 25px 0;
+        }
+        .disease-card {
+            background: #fff; border-radius: 24px; padding: 25px 20px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+            border: 1px solid #f0ebe3;
+            transition: 0.3s; text-align: center;
+        }
+        .disease-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(0,40,20,0.10);
+            border-color: #dac09a;
+        }
+        .disease-card img {
+            width: 100%; max-height: 180px; object-fit: cover;
+            border-radius: 16px; margin-bottom: 14px;
+        }
+        .disease-card h3 { color: #0f3b2a; font-size: 1.3rem; }
+        .disease-card p { color: #3d5447; font-size: 0.95rem; margin: 8px 0 12px; line-height: 1.5; }
+        .disease-card .read-more {
+            color: #b8863a; font-weight: 600; font-size: 0.9rem;
+            display: inline-block; margin-top: 5px;
+        }
+        .disease-card .read-more:hover { color: #9e6f2c; }
+
+        .detail-section {
+            background: #fff; border-radius: 30px; padding: 35px 30px;
+            margin: 40px 0; box-shadow: 0 6px 30px rgba(0,0,0,0.04);
+            border: 1px solid #f0ebe3;
+        }
+        .detail-section h2 {
+            color: #0f3b2a; font-size: 1.8rem;
+            border-left: 5px solid #b8863a; padding-left: 15px;
+            margin-bottom: 15px;
+        }
+        .detail-section h3 { color: #1f5e40; margin: 18px 0 8px; }
+        .detail-section ul {
+            list-style: none; padding-left: 5px;
+        }
+        .detail-section ul li {
+            padding: 6px 0 6px 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%231f5e40" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>') left center no-repeat;
+            background-size: 18px;
+        }
+        .detail-section .icon-big { font-size: 3rem; color: #1f5e40; margin-right: 12px; }
+
+        .booking-section {
+            background: #fff; padding: 40px 30px; border-radius: 30px;
+            margin: 40px 0; text-align: center; border: 1px solid #f0ebe3;
+        }
+        .booking-section h2 { color: #0f3b2a; font-size: 2rem; }
+        .booking-row {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 15px; margin-top: 18px;
+        }
+
+        .about-box {
+            background: linear-gradient(145deg, #e5efe8, #d4e0d9);
+            padding: 35px 30px; border-radius: 30px; margin: 35px 0;
+        }
+        .about-box h2 { color: #0f3b2a; }
+        .about-box ul {
+            list-style: none; margin-top: 15px;
+            display: flex; flex-wrap: wrap; gap: 10px 25px;
+        }
+        .about-box ul li {
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(255,255,255,0.6); padding: 6px 18px 6px 14px;
+            border-radius: 40px;
+        }
+
+        .footer {
+            background: #0f3b2a; color: #d4d9ce; text-align: center;
+            padding: 25px 20px; border-radius: 30px 30px 0 0; margin-top: 35px;
+        }
+        .footer .disclaimer {
+            font-size: 0.8rem; opacity: 0.7; max-width: 700px;
+            margin: 12px auto 0; line-height: 1.5;
+        }
+
+        .banner-img {
+            width: 100%; max-height: 380px; object-fit: cover;
+            border-radius: 30px; box-shadow: 0 8px 30px rgba(0,40,20,0.12);
+            margin: 10px 0 5px;
+        }
+
+        @media (max-width: 700px) {
+            .navbar { padding: 10px 15px; }
+            .nav-links {
+                display: none; width: 100%; flex-direction: column;
+                align-items: center; padding-top: 12px; gap: 8px;
+            }
+            .nav-links.open { display: flex; }
+            .menu-toggle { display: block; }
+            .hero h2 { font-size: 1.7rem; }
+            .section-title { font-size: 1.6rem; }
+            .detail-section { padding: 20px 15px; }
+            .detail-section h2 { font-size: 1.4rem; }
+            .banner-img { max-height: 200px; border-radius: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== MENU ===== -->
+<nav class="navbar">
+    <div class="logo"><i class="fas fa-leaf"></i> डॉ. RANJEET BANJARE</div>
+    <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+    <div class="nav-links" id="navLinks">
+        <a href="#home">🏠 होम</a>
+        <a href="#services">💊 सेवाएँ</a>
+        <a href="#diseases">🩺 रोग</a>
+        <a href="#booking">📅 बुकिंग</a>
+        <a href="#about">👨‍⚕️ डॉक्टर</a>
+        <a href="#contact">📞 संपर्क</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- ===== आयुर्वेदिक बैनर ===== -->
+    <img src="images/ayurveda-banner.webp" alt="आयुर्वेदिक उपचार केंद्र" class="banner-img" />
+
+    <!-- ===== HOME ===== -->
+    <section id="home">
+        <div class="hero">
+            <h2>🌿 प्राकृतिक उपचार, स्वस्थ जीवन</h2>
+            <p>10+ वर्षों का अनुभव | 1000+ खुश मरीज़</p>
+            <a href="#booking" class="btn"><i class="fas fa-calendar-check"></i> अपॉइंटमेंट बुक करें</a>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <h2 class="section-title" id="services">🌱 हमारी सेवाएँ</h2>
+    <div class="disease-grid">
+        <div class="disease-card">
+            <i class="fas fa-spa" style="font-size:2.8rem; color:#1f5e40;"></i>
+            <h3>प्रकृति परीक्षण</h3>
+            <p>वात, पित्त, कफ दोषों का विश्लेषण कर उचित उपचार</p>
+        </div>
+        <div class="disease-card">
+            <i class="fas fa-fire" style="font-size:2.8rem; color:#1f5e40;"></i>
+            <h3>पंचकर्म थेरेपी</h3>
+            <p>शरीर को डिटॉक्स करने की प्राचीन विधि</p>
+        </div>
+        <div class="disease-card">
+            <i class="fas fa-mortar-pestle" style="font-size:2.8rem; color:#1f5e40;"></i>
+            <h3>हर्बल दवाइयाँ</h3>
+            <p>100% शुद्ध एवं प्रमाणित आयुर्वेदिक औषधियाँ</p>
+        </div>
+        <div class="disease-card">
+            <i class="fas fa-yoga" style="font-size:2.8rem; color:#1f5e40;"></i>
+            <h3>योग एवं आहार</h3>
+            <p>रोग अनुसार योगासन और पथ्य/अपथ्य आहार सलाह</p>
+        </div>
+    </div>
+
+    <!-- ===== DISEASES ===== -->
+    <h2 class="section-title" id="diseases">🩺 हम इन रोगों का इलाज करते हैं</h2>
+    <div class="disease-grid">
+        <div class="disease-card">
+            <img src="images/sciatica.jpg" alt="साइटिका" onerror="this.src='https://via.placeholder.com/400x200/1f5e40/fff?text=साइटिका'"/>
+            <h3>साइटिका (Sciatica)</h3>
+            <p>कमर से पैर तक दर्द, झुनझुनी और सुन्नपन</p>
+            <a href="#sciatica" class="read-more">और पढ़ें →</a>
+        </div>
+        <div class="disease-card">
+            <img src="images/piles.jpg" alt="पाइल्स" onerror="this.src='https://via.placeholder.com/400x200/8B0000/fff?text=पाइल्स'"/>
+            <h3>पाइल्स (Piles)</h3>
+            <p>मलद्वार में सूजन, दर्द और खून आना</p>
+            <a href="#piles" class="read-more">और पढ़ें →</a>
+        </div>
+        <div class="disease-card">
+            <img src="images/gout.jpg" alt="बात" onerror="this.src='https://via.placeholder.com/400x200/2c3e50/fff?text=बात'"/>
+            <h3>बात (Gout/Arthritis)</h3>
+            <p>जोड़ों में सूजन, दर्द और अकड़न</p>
+            <a href="#gout" class="read-more">और पढ़ें →</a>
+        </div>
+        <div class="disease-card">
+            <img src="images/paralysis.jpg" alt="लकवा" onerror="this.src='https://via.placeholder.com/400x200/8B4513/fff?text=लकवा'"/>
+            <h3>लकवा (Paralysis)</h3>
+            <p>शरीर के किसी अंग में संवेदना और हरकत खत्म होना</p>
+            <a href="#paralysis" class="read-more">और पढ़ें →</a>
+        </div>
+        <div class="disease-card">
+            <img src="images/stone.jpg" alt="पथरी" onerror="this.src='https://via.placeholder.com/400x200/4a6741/fff?text=पथरी'"/>
+            <h3>पथरी (Kidney Stone)</h3>
+            <p>किडनी या मूत्राशय में पत्थर बनना</p>
+            <a href="#stone" class="read-more">और पढ़ें →</a>
+        </div>
+    </div>
+
+    <!-- ===== SCIATICA DETAIL ===== -->
+    <section id="sciatica" class="detail-section">
+        <h2><i class="fas fa-spine icon-big"></i> साइटिका (Sciatica) – पूरी जानकारी</h2>
+        <p><strong>साइटिका</strong> वह स्थिति है जब साइटिक नर्व में दबाव या चोट लगने से दर्द, झुनझुनी और सुन्नपन होता है।</p>
+        <h3>⚠️ लक्षण (Symptoms)</h3>
+        <ul><li>कमर से लेकर पैर तक तेज दर्द</li><li>पैर में झुनझुनी या सुन्नपन</li><li>खड़े होने या बैठने पर दर्द बढ़ना</li></ul>
+        <h3>🌿 आयुर्वेदिक उपचार</h3>
+        <ul><li><strong>स्नेहन और स्वेदन:</strong> तेल मालिश और भाप</li><li><strong>कटि बस्ती:</strong> कमर पर मेडिकेटेड तेल</li><li><strong>योगासन:</strong> भुजंगासन, शलभासन</li></ul>
+        <h3>🍽️ आहार सुझाव</h3>
+        <ul><li>गर्म और ताजा भोजन करें</li><li>मीठा, ठंडा, तली-भुनी चीज़ों से बचें</li><li>तिल, अखरोट, लहसुन, अदरक का सेवन करें</li></ul>
+        <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
+    </section>
+
+    <!-- ===== PILES DETAIL ===== -->
+    <section id="piles" class="detail-section">
+        <h2><i class="fas fa-toilet icon-big"></i> पाइल्स (Piles) – पूरी जानकारी</h2>
+        <p><strong>पाइल्स</strong> मलद्वार के अंदर या बाहर नसों में सूजन है।</p>
+        <h3>⚠️ लक्षण</h3>
+        <ul><li>मल त्याग के दौरान दर्द और जलन</li><li>मल के साथ खून आना</li><li>गांठ बाहर निकलना</li></ul>
+        <h3>🌿 आयुर्वेदिक उपचार</h3>
+        <ul><li><strong>अर्शोघ्न दवाएँ:</strong> चूर्ण, वटी</li><li><strong>क्षार कर्म:</strong> जड़ी-बूटियों से दागना</li><li><strong>योग:</strong> पवनमुक्तासन, वज्रासन</li></ul>
+        <h3>🍽️ आहार सुझाव</h3>
+        <ul><li>फाइबर युक्त भोजन (फल, हरी सब्जियाँ)</li><li>खूब पानी पिएँ</li><li>मिर्च, मसाले, शराब, चाय-कॉफी से बचें</li></ul>
+        <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
+    </section>
+
+    <!-- ===== GOUT DETAIL ===== -->
+    <section id="gout" class="detail-section">
+        <h2><i class="fas fa-bone icon-big"></i> बात (Gout / Arthritis) – पूरी जानकारी</h2>
+        <p><strong>बात</strong> जोड़ों में सूजन, अकड़न और दर्द की समस्या है।</p>
+        <h3>⚠️ लक्षण</h3>
+        <ul><li>जोड़ों में दर्द और सूजन</li><li>सुबह उठते समय अकड़न</li><li>चलने-फिरने में दिक्कत</li></ul>
+        <h3>🌿 आयुर्वेदिक उपचार</h3>
+        <ul><li><strong>अभ्यंग:</strong> मेडिकेटेड तेल से मालिश</li><li><strong>पंचकर्म:</strong> विरेचन, बस्ति</li><li><strong>हर्बल दवाएँ:</strong> गोखुरू, अश्वगंधा</li></ul>
+        <h3>🍽️ आहार सुझाव</h3>
+        <ul><li>गर्म, हल्का आहार लें</li><li>फास्ट फूड, चीनी, तेल से बचें</li><li>अदरक, हल्दी, लहसुन का सेवन बढ़ाएँ</li></ul>
+        <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
+    </section>
+
+    <!-- ===== PARALYSIS DETAIL ===== -->
+    <section id="paralysis" class="detail-section">
+        <h2><i class="fas fa-wheelchair icon-big"></i> लकवा (Paralysis) – पूरी जानकारी</h2>
+        <p><strong>लकवा</strong> शरीर के किसी अंग में संवेदना और हरकत खत्म हो जाना है।</p>
+        <h3>⚠️ लक्षण</h3>
+        <ul><li>किसी अंग को हिलाने में असमर्थता</li><li>चेहरे, हाथ या पैर में अकड़न</li><li>बोलने में परेशानी</li></ul>
+        <h3>🌿 आयुर्वेदिक उपचार</h3>
+        <ul><li><strong>पंचकर्म, बस्ति, नस्य</strong></li><li><strong>तेल मालिश:</strong> बाला तेल, माहानारायण तेल</li><li><strong>योग:</strong> सुखासन, वज्रासन</li></ul>
+        <h3>🍽️ आहार सुझाव</h3>
+        <ul><li>आसानी से पचने वाला भोजन</li><li>मूंग दाल, सब्जी, फलों का सेवन</li><li>तली-भुनी, मिर्च मसाले से बचें</li></ul>
+        <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
+    </section>
+
+    <!-- ===== STONE DETAIL ===== -->
+    <section id="stone" class="detail-section">
+        <h2><i class="fas fa-kidney icon-big"></i> पथरी (Kidney Stone) – पूरी जानकारी</h2>
+        <p><strong>पथरी</strong> गुर्दे या मूत्राशय में खनिजों के जमा होकर पत्थर बनने की स्थिति है।</p>
+        <h3>⚠️ लक्षण</h3>
+        <ul><li>पीठ या पेट में तेज दर्द</li><li>पेशाब में खून आना</li><li>बार-बार पेशाब की इच्छा</li></ul>
+        <h3>🌿 आयुर्वेदिक उपचार</h3>
+        <ul><li><strong>मूत्रल दवाएँ:</strong> गोखुरू, वरुण, पुनर्नवा</li><li><strong>पथरी घोलने वाली औषधियाँ</strong></li><li><strong>आहार:</strong> 3-4 लीटर पानी, नींबू पानी</li></ul>
+        <h3>🍽️ आहार सुझाव</h3>
+        <ul><li>दिन में 3-4 लीटर पानी पिएँ</li><li>नींबू पानी, नारियल पानी का सेवन करें</li><li>पालक, टमाटर, चुकंदर, नट्स कम खाएँ</li></ul>
+        <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
+    </section>
+
+    <!-- ===== BOOKING ===== -->
+    <section id="booking" class="booking-section">
+        <h2><i class="fas fa-phone-alt" style="color:#1f5e40;"></i> बुकिंग / अपॉइंटमेंट</h2>
+        <p>सीधे कॉल करें या WhatsApp पर संपर्क करें</p>
+        <div class="booking-row">
+            <a href="tel:+919340344011" class="btn"><i class="fas fa-phone"></i> +91 9340344011</a>
+            <a href="https://wa.me/919340344011?text=मुझे%20आयुर्वेदिक%20अपॉइंटमेंट%20चाहिए" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <p style="margin-top:15px; font-size:0.95rem; color:#5a6f61;">⏰ सुबह 9:00 AM – शाम 7:00 PM (सोम-शनि)</p>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="about-box">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:30px;">
+            <img src="images/doctor.jpg" alt="डॉ. RANJEET BANJARE" 
+                 style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:5px solid #b8863a; box-shadow:0 8px 25px rgba(0,0,0,0.12);" />
+            <div style="flex:1;">
+                <h2><i class="fas fa-user-md" style="color:#1f5e40;"></i> RANJEET BANJARE</h2>
+                <ul>
+                    <li><i class="fas fa-graduation-cap"></i> B.A.M.S. (AI)</li>
+                    <li><i class="fas fa-clock"></i> 10+ वर्षों का अनुभव</li>
+                    <li><i class="fas fa-heartbeat"></i> 1000+ सफल इलाज</li>
+                    <li><i class="fas fa-leaf"></i> आयुर्वेदिक विशेषज्ञ</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" style="text-align:center; margin: 25px 0 10px;">
+        <p style="font-size:1.1rem; color:#2b4a3b;">
+            <i class="fas fa-map-marker-alt" style="color:#b8863a;"></i> सिंधनपुर, सारंगढ़-बिलाइगढ़, छत्तीसगढ़
+        </p>
+    </section>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <p>© 2026 डॉ. RANJEET BANJARE- सर्वाधिकार सुरक्षित</p>
+    <p class="disclaimer">⚠️ अस्वीकरण: यह साइट केवल जानकारी के लिए है। कृपया कोई भी दवा/उपचार लेने से पहले अपने चिकित्सक से सलाह लें।</p>
+</footer>
+
+<script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('navLinks').classList.remove('open');
+        });
+    });
+</script>
+
+</body>
+</html>
