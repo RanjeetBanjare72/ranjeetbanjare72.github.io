@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>RANJEET BANJARE</title>
+    <title>डॉ. RANJEET BANJARE </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -118,9 +118,33 @@
             margin: 40px 0; text-align: center; border: 1px solid #f0ebe3;
         }
         .booking-section h2 { color: #0f3b2a; font-size: 2rem; }
-        .booking-row {
-            display: flex; flex-wrap: wrap; justify-content: center;
-            gap: 15px; margin-top: 18px;
+        .booking-section p { color: #3d5447; margin: 10px 0 20px; }
+
+        .booking-form {
+            max-width: 500px; margin: 0 auto; text-align: left;
+        }
+        .booking-form input,
+        .booking-form select,
+        .booking-form textarea {
+            width: 100%; padding: 14px; margin: 10px 0;
+            border: 2px solid #d4d9ce; border-radius: 12px;
+            font-size: 1rem; background: #fcfcfc;
+            transition: 0.3s;
+        }
+        .booking-form input:focus,
+        .booking-form select:focus,
+        .booking-form textarea:focus {
+            border-color: #1f5e40;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(31, 94, 64, 0.08);
+        }
+        .booking-form textarea {
+            resize: vertical; font-family: inherit;
+        }
+        .booking-form .btn {
+            width: 100%; border: none; cursor: pointer;
+            font-size: 1.1rem; padding: 16px;
         }
 
         .about-box {
@@ -153,6 +177,28 @@
             margin: 10px 0 5px;
         }
 
+        .doctor-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f3b2a;
+            letter-spacing: 0.5px;
+        }
+        .doctor-qualification {
+            font-size: 1.1rem;
+            color: #1f5e40;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+        .logo-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f5e6c8;
+            letter-spacing: 0.5px;
+        }
+        .logo-name span {
+            color: #e8b86d;
+        }
+
         @media (max-width: 700px) {
             .navbar { padding: 10px 15px; }
             .nav-links {
@@ -166,6 +212,8 @@
             .detail-section { padding: 20px 15px; }
             .detail-section h2 { font-size: 1.4rem; }
             .banner-img { max-height: 200px; border-radius: 20px; }
+            .booking-section { padding: 25px 18px; }
+            .doctor-name { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -173,7 +221,7 @@
 
 <!-- ===== MENU ===== -->
 <nav class="navbar">
-    <div class="logo"><i class="fas fa-leaf"></i> डॉ. RANJEET BANJARE</div>
+    <div class="logo"><i class="fas fa-leaf"></i> <span class="logo-name">डॉ. <span>RANJEET</span></span></div>
     <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
     <div class="nav-links" id="navLinks">
         <a href="#home">🏠 होम</a>
@@ -187,10 +235,10 @@
 
 <div class="container">
 
-    <!-- ===== आयुर्वेदिक बैनर ===== -->
+    <!-- ===== बैनर ===== -->
     <img src="images/ayurveda-banner.webp" alt="आयुर्वेदिक उपचार केंद्र" class="banner-img" />
 
-    <!-- ===== HOME ===== -->
+    <!-- ===== होम ===== -->
     <section id="home">
         <div class="hero">
             <h2>🌿 प्राकृतिक उपचार, स्वस्थ जीवन</h2>
@@ -199,7 +247,7 @@
         </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
+    <!-- ===== सेवाएँ ===== -->
     <h2 class="section-title" id="services">🌱 हमारी सेवाएँ</h2>
     <div class="disease-grid">
         <div class="disease-card">
@@ -224,7 +272,7 @@
         </div>
     </div>
 
-    <!-- ===== DISEASES ===== -->
+    <!-- ===== रोग ===== -->
     <h2 class="section-title" id="diseases">🩺 हम इन रोगों का इलाज करते हैं</h2>
     <div class="disease-grid">
         <div class="disease-card">
@@ -259,7 +307,7 @@
         </div>
     </div>
 
-    <!-- ===== SCIATICA DETAIL ===== -->
+    <!-- ===== साइटिका ===== -->
     <section id="sciatica" class="detail-section">
         <h2><i class="fas fa-spine icon-big"></i> साइटिका (Sciatica) – पूरी जानकारी</h2>
         <p><strong>साइटिका</strong> वह स्थिति है जब साइटिक नर्व में दबाव या चोट लगने से दर्द, झुनझुनी और सुन्नपन होता है।</p>
@@ -272,7 +320,7 @@
         <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
     </section>
 
-    <!-- ===== PILES DETAIL ===== -->
+    <!-- ===== पाइल्स ===== -->
     <section id="piles" class="detail-section">
         <h2><i class="fas fa-toilet icon-big"></i> पाइल्स (Piles) – पूरी जानकारी</h2>
         <p><strong>पाइल्स</strong> मलद्वार के अंदर या बाहर नसों में सूजन है।</p>
@@ -285,7 +333,7 @@
         <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
     </section>
 
-    <!-- ===== GOUT DETAIL ===== -->
+    <!-- ===== बात ===== -->
     <section id="gout" class="detail-section">
         <h2><i class="fas fa-bone icon-big"></i> बात (Gout / Arthritis) – पूरी जानकारी</h2>
         <p><strong>बात</strong> जोड़ों में सूजन, अकड़न और दर्द की समस्या है।</p>
@@ -298,7 +346,7 @@
         <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
     </section>
 
-    <!-- ===== PARALYSIS DETAIL ===== -->
+    <!-- ===== लकवा ===== -->
     <section id="paralysis" class="detail-section">
         <h2><i class="fas fa-wheelchair icon-big"></i> लकवा (Paralysis) – पूरी जानकारी</h2>
         <p><strong>लकवा</strong> शरीर के किसी अंग में संवेदना और हरकत खत्म हो जाना है।</p>
@@ -311,7 +359,7 @@
         <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
     </section>
 
-    <!-- ===== STONE DETAIL ===== -->
+    <!-- ===== पथरी ===== -->
     <section id="stone" class="detail-section">
         <h2><i class="fas fa-kidney icon-big"></i> पथरी (Kidney Stone) – पूरी जानकारी</h2>
         <p><strong>पथरी</strong> गुर्दे या मूत्राशय में खनिजों के जमा होकर पत्थर बनने की स्थिति है।</p>
@@ -324,26 +372,43 @@
         <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
     </section>
 
-    <!-- ===== BOOKING ===== -->
+    <!-- ===== बुकिंग ===== -->
     <section id="booking" class="booking-section">
-        <h2><i class="fas fa-phone-alt" style="color:#1f5e40;"></i> बुकिंग / अपॉइंटमेंट</h2>
-        <p>सीधे कॉल करें या WhatsApp पर संपर्क करें</p>
-        <div class="booking-row">
-            <a href="tel:+919340344011" class="btn"><i class="fas fa-phone"></i> +91 9340344011</a>
-            <a href="https://wa.me/919340344011?text=मुझे%20आयुर्वेदिक%20अपॉइंटमेंट%20चाहिए" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        </div>
-        <p style="margin-top:15px; font-size:0.95rem; color:#5a6f61;">⏰ सुबह 9:00 AM – शाम 7:00 PM (सोम-शनि)</p>
+        <h2><i class="fas fa-calendar-check" style="color:#1f5e40;"></i> अपॉइंटमेंट बुक करें</h2>
+        <p>नीचे दिया गया फॉर्म भरें — हम आपको WhatsApp पर कंफर्म कर देंगे</p>
+
+        <form id="appointmentForm" class="booking-form">
+            <input type="text" id="name" placeholder="आपका पूरा नाम" required />
+            <input type="tel" id="phone" placeholder="आपका मोबाइल नंबर" required />
+            <input type="date" id="date" required />
+            <select id="service" required>
+                <option value="">-- सेवा चुनें --</option>
+                <option value="प्रकृति परीक्षण">प्रकृति परीक्षण</option>
+                <option value="पंचकर्म थेरेपी">पंचकर्म थेरेपी</option>
+                <option value="हर्बल दवा परामर्श">हर्बल दवा परामर्श</option>
+                <option value="योग एवं आहार सलाह">योग एवं आहार सलाह</option>
+            </select>
+            <textarea id="message" placeholder="अगर कुछ और बताना है (जैसे लक्षण)" rows="3"></textarea>
+            <button type="submit" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp पर बुक करें
+            </button>
+        </form>
+
+        <p style="font-size:0.85rem; color:#5a6f61; margin-top:15px;">
+            ⏰ समय: सुबह 9:00 AM – शाम 7:00 PM (सोम-शनि)
+        </p>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-- ===== डॉक्टर ===== -->
     <section id="about" class="about-box">
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:30px;">
-            <img src="images/doctor.jpg" alt="डॉ. RANJEET BANJARE" 
+            <img src="images/doctor.jpg" alt="Dr. Ranjeet Banjare" 
                  style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:5px solid #b8863a; box-shadow:0 8px 25px rgba(0,0,0,0.12);" />
             <div style="flex:1;">
-                <h2><i class="fas fa-user-md" style="color:#1f5e40;"></i> RANJEET BANJARE</h2>
-                <ul>
-                    <li><i class="fas fa-graduation-cap"></i> B.A.M.S. (AI)</li>
+                <div class="doctor-name">Dr. RANJEET BANJARE</div>
+                <div class="doctor-qualification">B.A.M.S (AI)</div>
+                <ul style="margin-top:12px;">
+                    <li><i class="fas fa-graduation-cap"></i> B.A.M.S (AI)</li>
                     <li><i class="fas fa-clock"></i> 10+ वर्षों का अनुभव</li>
                     <li><i class="fas fa-heartbeat"></i> 1000+ सफल इलाज</li>
                     <li><i class="fas fa-leaf"></i> आयुर्वेदिक विशेषज्ञ</li>
@@ -352,21 +417,22 @@
         </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
+    <!-- ===== संपर्क ===== -->
     <section id="contact" style="text-align:center; margin: 25px 0 10px;">
         <p style="font-size:1.1rem; color:#2b4a3b;">
-            <i class="fas fa-map-marker-alt" style="color:#b8863a;"></i> सिंधनपुर, सारंगढ़-बिलाइगढ़, छत्तीसगढ़
+            <i class="fas fa-map-marker-alt" style="color:#b8863a;"></i> सिंघनपुर, सारंगढ़-बिलाइगढ़, छत्तीसगढ़
         </p>
     </section>
 
 </div>
 
-<!-- ===== FOOTER ===== -->
+<!-- ===== फूटर ===== -->
 <footer class="footer">
-    <p>© 2026 डॉ. RANJEET BANJARE- सर्वाधिकार सुरक्षित</p>
+    <p>© 2026 Dr. Ranjeet Banjare - सर्वाधिकार सुरक्षित</p>
     <p class="disclaimer">⚠️ अस्वीकरण: यह साइट केवल जानकारी के लिए है। कृपया कोई भी दवा/उपचार लेने से पहले अपने चिकित्सक से सलाह लें।</p>
 </footer>
 
+<!-- ===== मोबाइल मेन्यू ===== -->
 <script>
     document.getElementById('menuToggle').addEventListener('click', function() {
         document.getElementById('navLinks').classList.toggle('open');
@@ -375,6 +441,26 @@
         link.addEventListener('click', () => {
             document.getElementById('navLinks').classList.remove('open');
         });
+    });
+</script>
+
+<!-- ===== व्हाट्सएप बुकिंग ===== -->
+<script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const date = document.getElementById('date').value;
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value.trim();
+
+        const whatsappMsg = `🙏 *नया अपॉइंटमेंट* 🙏%0A%0A👤 नाम: ${name}%0A📱 मोबाइल: ${phone}%0A📅 तारीख: ${date}%0A💊 सेवा: ${service}%0A📝 अतिरिक्त जानकारी: ${message || "नहीं"}`;
+
+        const whatsappURL = `https://wa.me/919340344011?text=${whatsappMsg}`;
+
+        window.open(whatsappURL, '_blank');
+        this.reset();
     });
 </script>
 
