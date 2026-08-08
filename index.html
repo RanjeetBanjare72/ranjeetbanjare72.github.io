@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>डॉ. RANJEET BANJARE - आयुर्वेदिक उपचार</title>
+    <title>डॉ. RANJEET BANJARE- आयुर्वेदिक उपचार</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
         * {
@@ -135,14 +135,16 @@
         }
 
         .service-grid,
-        .disease-grid {
+        .disease-grid,
+        .medicine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
             margin: 25px 0;
         }
         .service-card,
-        .disease-card {
+        .disease-card,
+        .medicine-card {
             background: #fff;
             border-radius: 24px;
             padding: 25px 20px;
@@ -152,31 +154,45 @@
             text-align: center;
         }
         .service-card:hover,
-        .disease-card:hover {
+        .disease-card:hover,
+        .medicine-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 12px 35px rgba(0, 40, 20, 0.10);
             border-color: #dac09a;
         }
         .service-card i,
-        .disease-card i {
+        .disease-card i,
+        .medicine-card i {
             font-size: 2.8rem;
             color: #1f5e40;
             margin-bottom: 10px;
         }
+        .service-card img,
+        .disease-card img,
+        .medicine-card img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 14px;
+        }
         .service-card h3,
-        .disease-card h3 {
+        .disease-card h3,
+        .medicine-card h3 {
             color: #0f3b2a;
             font-size: 1.3rem;
         }
         .service-card p,
-        .disease-card p {
+        .disease-card p,
+        .medicine-card p {
             color: #3d5447;
             font-size: 0.95rem;
             margin: 8px 0 12px;
             line-height: 1.5;
         }
         .service-card .read-more,
-        .disease-card .read-more {
+        .disease-card .read-more,
+        .medicine-card .read-more {
             color: #b8863a;
             font-weight: 600;
             font-size: 0.9rem;
@@ -184,11 +200,13 @@
             margin-top: 5px;
         }
         .service-card .read-more:hover,
-        .disease-card .read-more:hover {
+        .disease-card .read-more:hover,
+        .medicine-card .read-more:hover {
             color: #9e6f2c;
         }
         .service-card a,
-        .disease-card a {
+        .disease-card a,
+        .medicine-card a {
             display: block;
             color: inherit;
         }
@@ -356,6 +374,7 @@
             <a href="index.html">🏠 होम</a>
             <a href="#services">💊 सेवाएँ</a>
             <a href="#diseases">🩺 रोग</a>
+            <a href="#medicines">🌿 औषधियाँ</a>
             <a href="#booking">📅 बुकिंग</a>
             <a href="#about">👨‍⚕️ डॉक्टर</a>
             <a href="#contact">📞 संपर्क</a>
@@ -458,6 +477,91 @@
             </div>
         </div>
 
+        <!-- ===== MEDICINES (नया सेक्शन) ===== -->
+        <h2 class="section-title" id="medicines">🌿 आयुर्वेदिक औषधियाँ</h2>
+        <div class="medicine-grid">
+            <div class="medicine-card">
+                <a href="ayurvedic-medicines/ashwagandha.html">
+                    <img src="images/ashwagandha.jpg" alt="अश्वगंधा" onerror="this.src='https://via.placeholder.com/400x200/1f5e40/fff?text=अश्वगंधा'"/>
+                    <h3>अश्वगंधा</h3>
+                    <p>Ashwagandha - तनाव, थकान, नींद के लिए</p>
+                    <span class="read-more">और पढ़ें →</span>
+                </a>
+            </div>
+            <div class="medicine-card">
+                <a href="ayurvedic-medicines/triphala.html">
+                    <img src="images/triphala.jpg" alt="त्रिफला" onerror="this.src='https://via.placeholder.com/400x200/8B0000/fff?text=त्रिफला'"/>
+                    <h3>त्रिफला</h3>
+                    <p>Triphala - पाचन, कब्ज, आँखों के लिए</p>
+                    <span class="read-more">और पढ़ें →</span>
+                </a>
+            </div>
+            <div class="medicine-card">
+                <a href="ayurvedic-medicines/brahmi.html">
+                    <img src="images/brahmi.jpg" alt="ब्राह्मी" onerror="this.src='https://via.placeholder.com/400x200/2c3e50/fff?text=ब्राह्मी'"/>
+                    <h3>ब्राह्मी</h3>
+                    <p>Brahmi - दिमाग, याददाश्त के लिए</p>
+                    <span class="read-more">और पढ़ें →</span>
+                </a>
+            </div>
+            <div class="medicine-card">
+                <a href="ayurvedic-medicines/shatavari.html">
+                    <img src="images/shatavari.jpg" alt="शतावरी" onerror="this.src='https://via.placeholder.com/400x200/8B4513/fff?text=शतावरी'"/>
+                    <h3>शतावरी</h3>
+                    <p>Shatavari - महिला स्वास्थ्य के लिए</p>
+                    <span class="read-more">और पढ़ें →</span>
+                </a>
+            </div>
+            <div class="medicine-card">
+                <a href="ayurvedic-medicines/neem.html">
+                    <img src="images/neem.jpg" alt="नीम" onerror="this.src='https://via.placeholder.com/400x200/4a6741/fff?text=नीम'"/>
+                    <h3>नीम</h3>
+                    <p>Neem - त्वचा, खून साफ करने के लिए</p>
+                    <span class="read-more">और पढ़ें →</span>
+                </a>
+            </div>
+            <div class="medicine-card">
+                <a href="ayurvedic-medicines/tulsi.html">
+                    <img src="images/tulsi.jpg" alt="तुलसी" onerror="this.src='https://via.placeholder.com/400x200/6B8E23/fff?text=तुलसी'"/>
+                    <h3>तुलसी</h3>
+                    <p>Tulsi - इम्यूनिटी, सर्दी-खांसी के लिए</p>
+                    <span class="read-more">और पढ़ें →</span>
+                </a>
+            </div>
+            <div class="medicine-card">
+                <a href="ayurvedic-medicines/giloy.html">
+                    <img src="images/giloy.jpg" alt="गिलोय" onerror="this.src='https://via.placeholder.com/400x200/1a4d2e/fff?text=गिलोय'"/>
+                    <h3>गिलोय</h3>
+                    <p>Giloy - बुखार, इम्यूनिटी के लिए</p>
+                    <span class="read-more">और पढ़ें →</span>
+                </a>
+            </div>
+            <div class="medicine-card">
+                <a href="ayurvedic-medicines/turmeric.html">
+                    <img src="images/turmeric.jpg" alt="हल्दी" onerror="this.src='https://via.placeholder.com/400x200/DAA520/fff?text=हल्दी'"/>
+                    <h3>हल्दी</h3>
+                    <p>Turmeric - सूजन, घाव के लिए</p>
+                    <span class="read-more">और पढ़ें →</span>
+                </a>
+            </div>
+            <div class="medicine-card">
+                <a href="ayurvedic-medicines/arjuna.html">
+                    <img src="images/arjuna.jpg" alt="अर्जुन" onerror="this.src='https://via.placeholder.com/400x200/8B0000/fff?text=अर्जुन'"/>
+                    <h3>अर्जुन</h3>
+                    <p>Arjuna - दिल, ब्लड प्रेशर के लिए</p>
+                    <span class="read-more">और पढ़ें →</span>
+                </a>
+            </div>
+            <div class="medicine-card">
+                <a href="ayurvedic-medicines/gokshura.html">
+                    <img src="images/gokshura.jpg" alt="गोखुरू" onerror="this.src='https://via.placeholder.com/400x200/556B2F/fff?text=गोखुरू'"/>
+                    <h3>गोखुरू</h3>
+                    <p>Gokshura - किडनी, पथरी के लिए</p>
+                    <span class="read-more">और पढ़ें →</span>
+                </a>
+            </div>
+        </div>
+
         <!-- ===== BOOKING ===== -->
         <section id="booking" class="booking-section">
             <h2><i class="fas fa-calendar-check" style="color:#1f5e40;"></i> अपॉइंटमेंट बुक करें</h2>
@@ -500,7 +604,7 @@
         <!-- ===== CONTACT ===== -->
         <section id="contact" style="text-align:center; margin: 25px 0 10px;">
             <p style="font-size:1.1rem; color:#2b4a3b;">
-                <i class="fas fa-map-marker-alt" style="color:#b8863a;"></i> सिंधनपुर, सारंगढ़-बिलाइगढ़, छत्तीसगढ़
+                <i class="fas fa-map-marker-alt" style="color:#b8863a;"></i> सिंघनपुर, सारंगढ़-बिलाइगढ़, छत्तीसगढ़
             </p>
         </section>
 
