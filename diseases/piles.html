@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>पाइल्स - डॉ. रणजीत बंजारे</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        body {
+            background: #f8f5f0;
+            color: #1e2b2c;
+        }
+        a {
+            text-decoration: none;
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: linear-gradient(135deg, #0f3b2a, #1f5e40);
+            padding: 12px 25px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+        .logo {
+            color: #f5e6c8;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .logo i {
+            color: #e8b86d;
+            margin-right: 8px;
+        }
+        .logo-name span {
+            color: #e8b86d;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+        }
+        .nav-links a {
+            color: #f0f0e8;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #e8b86d;
+            color: #ffe9b6;
+        }
+        .menu-toggle {
+            display: none;
+            color: #f5e6c8;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 25px;
+        }
+        .detail-section {
+            background: #fff;
+            border-radius: 30px;
+            padding: 40px 35px;
+            margin: 30px 0;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0ebe3;
+        }
+        .detail-section h1 {
+            color: #0f3b2a;
+            font-size: 2.2rem;
+            border-left: 5px solid #b8863a;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+        .detail-section h2 {
+            color: #1f5e40;
+            margin: 20px 0 10px;
+        }
+        .detail-section ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+        .detail-section ul li {
+            padding: 6px 0 6px 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%231f5e40" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>') left center no-repeat;
+            background-size: 18px;
+        }
+        .icon-big {
+            font-size: 3rem;
+            color: #1f5e40;
+            margin-right: 12px;
+        }
+        .btn-back {
+            display: inline-block;
+            background: #b8863a;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn-back:hover {
+            background: #9e6f2c;
+            transform: translateY(-2px);
+        }
+        .footer {
+            background: #0f3b2a;
+            color: #d4d9ce;
+            text-align: center;
+            padding: 25px 20px;
+            border-radius: 30px 30px 0 0;
+            margin-top: 35px;
+        }
+        .footer .disclaimer {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 12px auto 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                padding: 10px 15px;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 12px;
+                gap: 8px;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .detail-section {
+                padding: 20px 15px;
+            }
+            .detail-section h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-leaf"></i> <span class="logo-name">डॉ. <span>RANJEET</span></span></div>
+        <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+        <div class="nav-links" id="navLinks">
+            <a href="../index.html">🏠 होम</a>
+            <a href="../index.html#services">💊 सेवाएँ</a>
+            <a href="../index.html#diseases">🩺 रोग</a>
+            <a href="../index.html#booking">📅 बुकिंग</a>
+            <a href="../index.html#about">👨‍⚕️ डॉक्टर</a>
+            <a href="../index.html#contact">📞 संपर्क</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="detail-section">
+            <h1><i class="fas fa-toilet icon-big"></i> पाइल्स (Piles) – पूरी जानकारी</h1>
+            <p><strong>पाइल्स</strong> (बवासीर) मलद्वार के अंदर या बाहर नसों में सूजन हो जाती है, जिससे दर्द, खुजली और खून आता है।</p>
+
+            <h2>⚠️ लक्षण (Symptoms)</h2>
+            <ul>
+                <li>मल त्याग के दौरान दर्द और जलन</li>
+                <li>मल के साथ खून आना</li>
+                <li>गांठ (मस्सा) बाहर निकलना</li>
+                <li>बैठने में तकलीफ होना</li>
+            </ul>
+
+            <h2>🌿 आयुर्वेदिक उपचार</h2>
+            <ul>
+                <li><strong>अर्शोघ्न दवाएँ:</strong> चूर्ण, वटी, लेह</li>
+                <li><strong>क्षार कर्म:</strong> विशेष जड़ी-बूटियों से दागने की प्रक्रिया</li>
+                <li><strong>स्नान:</strong> कटुक तेल या काढ़े से सिट्ज़ बाथ</li>
+                <li><strong>योग:</strong> पवनमुक्तासन, वज्रासन</li>
+            </ul>
+
+            <h2>🍽️ आहार सुझाव</h2>
+            <ul>
+                <li>फाइबर युक्त भोजन (फल, हरी सब्जियाँ)</li>
+                <li>खूब पानी पिएँ (दिन में 8-10 गिलास)</li>
+                <li>मिर्च, मसाले, शराब, चाय-कॉफी से बचें</li>
+                <li>तली-भुनी और मैदा वाली चीज़ें न खाएँ</li>
+            </ul>
+
+            <h2>🧘 योगासन</h2>
+            <ul>
+                <li>पवनमुक्तासन (गैस रिलीज पोज़)</li>
+                <li>वज्रासन (हीरा पोज़)</li>
+                <li>सर्वांगासन (सोल्डर स्टैंड)</li>
+            </ul>
+
+            <a href="../index.html#diseases" class="btn-back">← सभी रोग</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Dr. Ranjeet Banjare - सर्वाधिकार सुरक्षित</p>
+        <p class="disclaimer">⚠️ अस्वीकरण: यह साइट केवल जानकारी के लिए है। कृपया कोई भी दवा/उपचार लेने से पहले अपने चिकित्सक से सलाह लें।</p>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>
