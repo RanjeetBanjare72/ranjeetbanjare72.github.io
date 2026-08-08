@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>डॉ. RANJEET BANJARE </title>
+    <title>डॉ. RANJEET BANJARE - आयुर्वेदिक उपचार</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -21,6 +21,7 @@
         }
         .logo { color: #f5e6c8; font-size: 1.3rem; font-weight: 700; }
         .logo i { color: #e8b86d; margin-right: 8px; }
+        .logo-name span { color: #e8b86d; }
         .nav-links {
             display: flex; flex-wrap: wrap;
             gap: 8px 16px;
@@ -64,33 +65,31 @@
             background: #b8863a; margin: 10px auto 0; border-radius: 4px;
         }
 
-        .disease-grid {
+        .service-grid, .disease-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px; margin: 25px 0;
         }
-        .disease-card {
+        .service-card, .disease-card {
             background: #fff; border-radius: 24px; padding: 25px 20px;
             box-shadow: 0 6px 24px rgba(0,0,0,0.05);
             border: 1px solid #f0ebe3;
             transition: 0.3s; text-align: center;
+            cursor: pointer;
         }
-        .disease-card:hover {
+        .service-card:hover, .disease-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 12px 35px rgba(0,40,20,0.10);
             border-color: #dac09a;
         }
-        .disease-card img {
-            width: 100%; max-height: 180px; object-fit: cover;
-            border-radius: 16px; margin-bottom: 14px;
-        }
-        .disease-card h3 { color: #0f3b2a; font-size: 1.3rem; }
-        .disease-card p { color: #3d5447; font-size: 0.95rem; margin: 8px 0 12px; line-height: 1.5; }
-        .disease-card .read-more {
+        .service-card i, .disease-card i { font-size: 2.8rem; color: #1f5e40; margin-bottom: 10px; }
+        .service-card h3, .disease-card h3 { color: #0f3b2a; font-size: 1.3rem; }
+        .service-card p, .disease-card p { color: #3d5447; font-size: 0.95rem; margin: 8px 0 12px; line-height: 1.5; }
+        .service-card .read-more, .disease-card .read-more {
             color: #b8863a; font-weight: 600; font-size: 0.9rem;
             display: inline-block; margin-top: 5px;
         }
-        .disease-card .read-more:hover { color: #9e6f2c; }
+        .service-card .read-more:hover, .disease-card .read-more:hover { color: #9e6f2c; }
 
         .detail-section {
             background: #fff; border-radius: 30px; padding: 35px 30px;
@@ -119,7 +118,6 @@
         }
         .booking-section h2 { color: #0f3b2a; font-size: 2rem; }
         .booking-section p { color: #3d5447; margin: 10px 0 20px; }
-
         .booking-form {
             max-width: 500px; margin: 0 auto; text-align: left;
         }
@@ -137,15 +135,10 @@
             border-color: #1f5e40;
             outline: none;
             background: #fff;
-            box-shadow: 0 0 0 4px rgba(31, 94, 64, 0.08);
+            box-shadow: 0 0 0 4px rgba(31,94,64,0.08);
         }
-        .booking-form textarea {
-            resize: vertical; font-family: inherit;
-        }
-        .booking-form .btn {
-            width: 100%; border: none; cursor: pointer;
-            font-size: 1.1rem; padding: 16px;
-        }
+        .booking-form textarea { resize: vertical; font-family: inherit; }
+        .booking-form .btn { width: 100%; border: none; cursor: pointer; font-size: 1.1rem; padding: 16px; }
 
         .about-box {
             background: linear-gradient(145deg, #e5efe8, #d4e0d9);
@@ -177,27 +170,8 @@
             margin: 10px 0 5px;
         }
 
-        .doctor-name {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #0f3b2a;
-            letter-spacing: 0.5px;
-        }
-        .doctor-qualification {
-            font-size: 1.1rem;
-            color: #1f5e40;
-            font-weight: 600;
-            margin-top: 2px;
-        }
-        .logo-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #f5e6c8;
-            letter-spacing: 0.5px;
-        }
-        .logo-name span {
-            color: #e8b86d;
-        }
+        .doctor-name { font-size: 2rem; font-weight: 700; color: #0f3b2a; letter-spacing: 0.5px; }
+        .doctor-qualification { font-size: 1.1rem; color: #1f5e40; font-weight: 600; margin-top: 2px; }
 
         @media (max-width: 700px) {
             .navbar { padding: 10px 15px; }
@@ -235,10 +209,10 @@
 
 <div class="container">
 
-    <!-- ===== बैनर ===== -->
+    <!-- ===== BANNER ===== -->
     <img src="images/ayurveda-banner.webp" alt="आयुर्वेदिक उपचार केंद्र" class="banner-img" />
 
-    <!-- ===== होम ===== -->
+    <!-- ===== HOME ===== -->
     <section id="home">
         <div class="hero">
             <h2>🌿 प्राकृतिक उपचार, स्वस्थ जीवन</h2>
@@ -247,67 +221,112 @@
         </div>
     </section>
 
-    <!-- ===== सेवाएँ ===== -->
+    <!-- ===== SERVICES (क्लिकेबल) ===== -->
     <h2 class="section-title" id="services">🌱 हमारी सेवाएँ</h2>
-    <div class="disease-grid">
-        <div class="disease-card">
-            <i class="fas fa-spa" style="font-size:2.8rem; color:#1f5e40;"></i>
+    <div class="service-grid">
+        <div class="service-card" onclick="location.href='#service-prakriti'">
+            <i class="fas fa-spa"></i>
             <h3>प्रकृति परीक्षण</h3>
-            <p>वात, पित्त, कफ दोषों का विश्लेषण कर उचित उपचार</p>
+            <p>वात, पित्त, कफ दोषों का विश्लेषण</p>
+            <span class="read-more">और पढ़ें →</span>
         </div>
-        <div class="disease-card">
-            <i class="fas fa-fire" style="font-size:2.8rem; color:#1f5e40;"></i>
+        <div class="service-card" onclick="location.href='#service-panchakarma'">
+            <i class="fas fa-fire"></i>
             <h3>पंचकर्म थेरेपी</h3>
             <p>शरीर को डिटॉक्स करने की प्राचीन विधि</p>
+            <span class="read-more">और पढ़ें →</span>
         </div>
-        <div class="disease-card">
-            <i class="fas fa-mortar-pestle" style="font-size:2.8rem; color:#1f5e40;"></i>
+        <div class="service-card" onclick="location.href='#service-herbal'">
+            <i class="fas fa-mortar-pestle"></i>
             <h3>हर्बल दवाइयाँ</h3>
-            <p>100% शुद्ध एवं प्रमाणित आयुर्वेदिक औषधियाँ</p>
+            <p>100% शुद्ध एवं प्रमाणित औषधियाँ</p>
+            <span class="read-more">और पढ़ें →</span>
         </div>
-        <div class="disease-card">
-            <i class="fas fa-yoga" style="font-size:2.8rem; color:#1f5e40;"></i>
+        <div class="service-card" onclick="location.href='#service-yoga'">
+            <i class="fas fa-yoga"></i>
             <h3>योग एवं आहार</h3>
-            <p>रोग अनुसार योगासन और पथ्य/अपथ्य आहार सलाह</p>
+            <p>रोग अनुसार योगासन और आहार सलाह</p>
+            <span class="read-more">और पढ़ें →</span>
         </div>
     </div>
 
-    <!-- ===== रोग ===== -->
+    <!-- ===== SERVICE DETAILS ===== -->
+    <section id="service-prakriti" class="detail-section">
+        <h2><i class="fas fa-spa icon-big"></i> प्रकृति परीक्षण – पूरी जानकारी</h2>
+        <p><strong>प्रकृति परीक्षण</strong> आयुर्वेद की वह विधि है जिसमें रोगी के शरीर में <strong>वात, पित्त, कफ</strong> तीनों दोषों का विश्लेषण किया जाता है। इससे यह पता चलता है कि कौन सा दोष बढ़ा हुआ है और उसके अनुसार उपचार दिया जाता है।</p>
+        <h3>🔍 क्यों जरूरी है?</h3>
+        <ul><li>हर व्यक्ति की प्रकृति अलग होती है — एक जैसा इलाज सबको नहीं सूट करता</li><li>प्रकृति परीक्षण से सही दवा और आहार चुना जाता है</li><li>बीमारी की जड़ तक पहुँचने में मदद मिलती है</li></ul>
+        <h3>🌿 हमारी विधि</h3>
+        <ul><li>नाड़ी परीक्षण (पल्स डायग्नोसिस)</li><li>जीभ, आँख, त्वचा की जाँच</li><li>व्यक्ति की आदतों और जीवनशैली का विश्लेषण</li></ul>
+        <p style="margin-top:15px; text-align:right;"><a href="#services" class="read-more">← सभी सेवाएँ</a></p>
+    </section>
+
+    <section id="service-panchakarma" class="detail-section">
+        <h2><i class="fas fa-fire icon-big"></i> पंचकर्म थेरेपी – पूरी जानकारी</h2>
+        <p><strong>पंचकर्म</strong> आयुर्वेद की सबसे प्राचीन और प्रभावी शुद्धिकरण विधि है। यह शरीर से विषाक्त पदार्थों (आम) को बाहर निकालता है और रोग प्रतिरोधक क्षमता बढ़ाता है।</p>
+        <h3>🧹 पंचकर्म के 5 मुख्य उपचार</h3>
+        <ul><li><strong>वमन:</strong> उल्टी द्वारा शुद्धि (कफ दोष के लिए)</li><li><strong>विरेचन:</strong> दस्त द्वारा शुद्धि (पित्त दोष के लिए)</li><li><strong>बस्ति:</strong> औषधीय एनीमा (वात दोष के लिए)</li><li><strong>नस्य:</strong> नाक के माध्यम से औषधि</li><li><strong>रक्तमोक्षण:</strong> रक्त शुद्धि</li></ul>
+        <h3>💆 किन रोगों में लाभकारी?</h3>
+        <ul><li>जोड़ों का दर्द, गठिया</li><li>पाचन विकार, कब्ज</li><li>त्वचा रोग, एलर्जी</li><li>तनाव, अनिद्रा</li></ul>
+        <p style="margin-top:15px; text-align:right;"><a href="#services" class="read-more">← सभी सेवाएँ</a></p>
+    </section>
+
+    <section id="service-herbal" class="detail-section">
+        <h2><i class="fas fa-mortar-pestle icon-big"></i> हर्बल दवाइयाँ – पूरी जानकारी</h2>
+        <p><strong>हर्बल दवाइयाँ</strong> शुद्ध जड़ी-बूटियों से बनाई जाती हैं। इनका कोई साइड इफेक्ट नहीं होता और ये शरीर को प्राकृतिक रूप से ठीक करती हैं।</p>
+        <h3>🌿 हमारी खास जड़ी-बूटियाँ</h3>
+        <ul><li><strong>अश्वगंधा:</strong> तनाव, थकान, कमजोरी में लाभकारी</li><li><strong>त्रिफला:</strong> पाचन, कब्ज, आँखों के लिए</li><li><strong>ब्राह्मी:</strong> दिमाग, याददाश्त, नींद के लिए</li><li><strong>शतावरी:</strong> महिलाओं के स्वास्थ्य के लिए</li></ul>
+        <h3>✅ हमारी गारंटी</h3>
+        <ul><li>100% शुद्ध और प्रमाणित</li><li>बिना किसी केमिकल या प्रिजर्वेटिव के</li><li>विशेषज्ञ डॉक्टर द्वारा सुझाई गई</li></ul>
+        <p style="margin-top:15px; text-align:right;"><a href="#services" class="read-more">← सभी सेवाएँ</a></p>
+    </section>
+
+    <section id="service-yoga" class="detail-section">
+        <h2><i class="fas fa-yoga icon-big"></i> योग एवं आहार – पूरी जानकारी</h2>
+        <p>आयुर्वेद में <strong>योग और आहार</strong> को उपचार का अभिन्न हिस्सा माना गया है। बिना सही आहार और व्यायाम के कोई भी इलाज पूरा नहीं होता।</p>
+        <h3>🧘 योगासन (रोग अनुसार)</h3>
+        <ul><li><strong>साइटिका:</strong> भुजंगासन, शलभासन</li><li><strong>पाइल्स:</strong> पवनमुक्तासन, वज्रासन</li><li><strong>गठिया:</strong> सूर्य नमस्कार, त्रिकोणासन</li><li><strong>लकवा:</strong> सुखासन, वज्रासन, अनुलोम-विलोम</li></ul>
+        <h3>🍽️ आहार सुझाव</h3>
+        <ul><li>हल्का, ताजा और पचने वाला भोजन</li><li>तली-भुनी, मिर्च-मसाले, शराब से बचें</li><li>अदरक, हल्दी, लहसुन, तुलसी का सेवन बढ़ाएँ</li></ul>
+        <p style="margin-top:15px; text-align:right;"><a href="#services" class="read-more">← सभी सेवाएँ</a></p>
+    </section>
+
+    <!-- ===== DISEASES (क्लिकेबल) ===== -->
     <h2 class="section-title" id="diseases">🩺 हम इन रोगों का इलाज करते हैं</h2>
     <div class="disease-grid">
-        <div class="disease-card">
-            <img src="images/sciatica.jpg" alt="साइटिका" onerror="this.src='https://via.placeholder.com/400x200/1f5e40/fff?text=साइटिका'"/>
+        <div class="disease-card" onclick="location.href='#sciatica'">
+            <i class="fas fa-spine" style="font-size:2.8rem; color:#1f5e40;"></i>
             <h3>साइटिका (Sciatica)</h3>
             <p>कमर से पैर तक दर्द, झुनझुनी और सुन्नपन</p>
-            <a href="#sciatica" class="read-more">और पढ़ें →</a>
+            <span class="read-more">और पढ़ें →</span>
         </div>
-        <div class="disease-card">
-            <img src="images/piles.jpg" alt="पाइल्स" onerror="this.src='https://via.placeholder.com/400x200/8B0000/fff?text=पाइल्स'"/>
+        <div class="disease-card" onclick="location.href='#piles'">
+            <i class="fas fa-toilet" style="font-size:2.8rem; color:#1f5e40;"></i>
             <h3>पाइल्स (Piles)</h3>
             <p>मलद्वार में सूजन, दर्द और खून आना</p>
-            <a href="#piles" class="read-more">और पढ़ें →</a>
+            <span class="read-more">और पढ़ें →</span>
         </div>
-        <div class="disease-card">
-            <img src="images/gout.jpg" alt="बात" onerror="this.src='https://via.placeholder.com/400x200/2c3e50/fff?text=बात'"/>
+        <div class="disease-card" onclick="location.href='#gout'">
+            <i class="fas fa-bone" style="font-size:2.8rem; color:#1f5e40;"></i>
             <h3>बात (Gout/Arthritis)</h3>
             <p>जोड़ों में सूजन, दर्द और अकड़न</p>
-            <a href="#gout" class="read-more">और पढ़ें →</a>
+            <span class="read-more">और पढ़ें →</span>
         </div>
-        <div class="disease-card">
-            <img src="images/paralysis.jpg" alt="लकवा" onerror="this.src='https://via.placeholder.com/400x200/8B4513/fff?text=लकवा'"/>
+        <div class="disease-card" onclick="location.href='#paralysis'">
+            <i class="fas fa-wheelchair" style="font-size:2.8rem; color:#1f5e40;"></i>
             <h3>लकवा (Paralysis)</h3>
-            <p>शरीर के किसी अंग में संवेदना और हरकत खत्म होना</p>
-            <a href="#paralysis" class="read-more">और पढ़ें →</a>
+            <p>शरीर के किसी अंग में संवेदना खत्म होना</p>
+            <span class="read-more">और पढ़ें →</span>
         </div>
-        <div class="disease-card">
-            <img src="images/stone.jpg" alt="पथरी" onerror="this.src='https://via.placeholder.com/400x200/4a6741/fff?text=पथरी'"/>
+        <div class="disease-card" onclick="location.href='#stone'">
+            <i class="fas fa-kidney" style="font-size:2.8rem; color:#1f5e40;"></i>
             <h3>पथरी (Kidney Stone)</h3>
             <p>किडनी या मूत्राशय में पत्थर बनना</p>
-            <a href="#stone" class="read-more">और पढ़ें →</a>
+            <span class="read-more">और पढ़ें →</span>
         </div>
     </div>
 
-    <!-- ===== साइटिका ===== -->
+    <!-- ===== SCIATICA DETAIL ===== -->
     <section id="sciatica" class="detail-section">
         <h2><i class="fas fa-spine icon-big"></i> साइटिका (Sciatica) – पूरी जानकारी</h2>
         <p><strong>साइटिका</strong> वह स्थिति है जब साइटिक नर्व में दबाव या चोट लगने से दर्द, झुनझुनी और सुन्नपन होता है।</p>
@@ -320,7 +339,7 @@
         <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
     </section>
 
-    <!-- ===== पाइल्स ===== -->
+    <!-- ===== PILES DETAIL ===== -->
     <section id="piles" class="detail-section">
         <h2><i class="fas fa-toilet icon-big"></i> पाइल्स (Piles) – पूरी जानकारी</h2>
         <p><strong>पाइल्स</strong> मलद्वार के अंदर या बाहर नसों में सूजन है।</p>
@@ -333,7 +352,7 @@
         <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
     </section>
 
-    <!-- ===== बात ===== -->
+    <!-- ===== GOUT DETAIL ===== -->
     <section id="gout" class="detail-section">
         <h2><i class="fas fa-bone icon-big"></i> बात (Gout / Arthritis) – पूरी जानकारी</h2>
         <p><strong>बात</strong> जोड़ों में सूजन, अकड़न और दर्द की समस्या है।</p>
@@ -346,7 +365,7 @@
         <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
     </section>
 
-    <!-- ===== लकवा ===== -->
+    <!-- ===== PARALYSIS DETAIL ===== -->
     <section id="paralysis" class="detail-section">
         <h2><i class="fas fa-wheelchair icon-big"></i> लकवा (Paralysis) – पूरी जानकारी</h2>
         <p><strong>लकवा</strong> शरीर के किसी अंग में संवेदना और हरकत खत्म हो जाना है।</p>
@@ -359,7 +378,7 @@
         <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
     </section>
 
-    <!-- ===== पथरी ===== -->
+    <!-- ===== STONE DETAIL ===== -->
     <section id="stone" class="detail-section">
         <h2><i class="fas fa-kidney icon-big"></i> पथरी (Kidney Stone) – पूरी जानकारी</h2>
         <p><strong>पथरी</strong> गुर्दे या मूत्राशय में खनिजों के जमा होकर पत्थर बनने की स्थिति है।</p>
@@ -372,11 +391,10 @@
         <p style="margin-top:15px; text-align:right;"><a href="#diseases" class="read-more">← सभी रोग</a></p>
     </section>
 
-    <!-- ===== बुकिंग ===== -->
+    <!-- ===== BOOKING ===== -->
     <section id="booking" class="booking-section">
         <h2><i class="fas fa-calendar-check" style="color:#1f5e40;"></i> अपॉइंटमेंट बुक करें</h2>
         <p>नीचे दिया गया फॉर्म भरें — हम आपको WhatsApp पर कंफर्म कर देंगे</p>
-
         <form id="appointmentForm" class="booking-form">
             <input type="text" id="name" placeholder="आपका पूरा नाम" required />
             <input type="tel" id="phone" placeholder="आपका मोबाइल नंबर" required />
@@ -389,21 +407,15 @@
                 <option value="योग एवं आहार सलाह">योग एवं आहार सलाह</option>
             </select>
             <textarea id="message" placeholder="अगर कुछ और बताना है (जैसे लक्षण)" rows="3"></textarea>
-            <button type="submit" class="btn btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp पर बुक करें
-            </button>
+            <button type="submit" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp पर बुक करें</button>
         </form>
-
-        <p style="font-size:0.85rem; color:#5a6f61; margin-top:15px;">
-            ⏰ समय: सुबह 9:00 AM – शाम 7:00 PM (सोम-शनि)
-        </p>
+        <p style="font-size:0.85rem; color:#5a6f61; margin-top:15px;">⏰ समय: सुबह 9:00 AM – शाम 7:00 PM (सोम-शनि)</p>
     </section>
 
-    <!-- ===== डॉक्टर ===== -->
+    <!-- ===== ABOUT ===== -->
     <section id="about" class="about-box">
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:30px;">
-            <img src="images/doctor.jpg" alt="Dr. Ranjeet Banjare" 
-                 style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:5px solid #b8863a; box-shadow:0 8px 25px rgba(0,0,0,0.12);" />
+            <img src="images/doctor.jpg" alt="Dr. Ranjeet Banjare" style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:5px solid #b8863a; box-shadow:0 8px 25px rgba(0,0,0,0.12);" />
             <div style="flex:1;">
                 <div class="doctor-name">Dr. RANJEET BANJARE</div>
                 <div class="doctor-qualification">B.A.M.S (AI)</div>
@@ -417,22 +429,22 @@
         </div>
     </section>
 
-    <!-- ===== संपर्क ===== -->
+    <!-- ===== CONTACT ===== -->
     <section id="contact" style="text-align:center; margin: 25px 0 10px;">
         <p style="font-size:1.1rem; color:#2b4a3b;">
-            <i class="fas fa-map-marker-alt" style="color:#b8863a;"></i> सिंघनपुर, सारंगढ़-बिलाइगढ़, छत्तीसगढ़
+            <i class="fas fa-map-marker-alt" style="color:#b8863a;"></i> सिंधनपुर, सारंगढ़-बिलाइगढ़, छत्तीसगढ़
         </p>
     </section>
 
 </div>
 
-<!-- ===== फूटर ===== -->
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
     <p>© 2026 Dr. Ranjeet Banjare - सर्वाधिकार सुरक्षित</p>
     <p class="disclaimer">⚠️ अस्वीकरण: यह साइट केवल जानकारी के लिए है। कृपया कोई भी दवा/उपचार लेने से पहले अपने चिकित्सक से सलाह लें।</p>
 </footer>
 
-<!-- ===== मोबाइल मेन्यू ===== -->
+<!-- ===== MOBILE MENU ===== -->
 <script>
     document.getElementById('menuToggle').addEventListener('click', function() {
         document.getElementById('navLinks').classList.toggle('open');
@@ -444,21 +456,17 @@
     });
 </script>
 
-<!-- ===== व्हाट्सएप बुकिंग ===== -->
+<!-- ===== WHATSAPP BOOKING ===== -->
 <script>
     document.getElementById('appointmentForm').addEventListener('submit', function(e) {
         e.preventDefault();
-
         const name = document.getElementById('name').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const date = document.getElementById('date').value;
         const service = document.getElementById('service').value;
         const message = document.getElementById('message').value.trim();
-
         const whatsappMsg = `🙏 *नया अपॉइंटमेंट* 🙏%0A%0A👤 नाम: ${name}%0A📱 मोबाइल: ${phone}%0A📅 तारीख: ${date}%0A💊 सेवा: ${service}%0A📝 अतिरिक्त जानकारी: ${message || "नहीं"}`;
-
         const whatsappURL = `https://wa.me/919340344011?text=${whatsappMsg}`;
-
         window.open(whatsappURL, '_blank');
         this.reset();
     });
